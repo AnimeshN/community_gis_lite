@@ -33,14 +33,15 @@ WAGTAIL_SITE_NAME = 'communityGIS Site'
 # Application definition
 
 INSTALLED_APPS = [
-    # 'home',
+    'home', # list of themes
+    'fgis',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'dashboard.apps.DashboardConfig',
+    'base.apps.BaseConfig',  #landing page
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -57,8 +58,7 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
 
-    # 'fgis_map.apps.FgisMapConfig',
-    # 'fgis_cms.apps.FgisCmsConfig',
+    'theme_details_cms.apps.ThemeDetailsCmsConfig',
 ]
 
 MIDDLEWARE = [

@@ -27,12 +27,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('',include('dashboard.urls')),
-
+    path('',include('base.urls')),
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'^themes/', include(wagtail_urls)),
 
-    # path('themes/facility_gis/',include('fgis_map.urls')),
+    path('map.themes/facility_gis/',include('fgis.urls')),
+   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

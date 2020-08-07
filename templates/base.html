@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{% block title%}{% endblock%}</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+			crossorigin="anonymous"
+		/>
+		<style>
+			.navbar-custom {
+				background-color: rgb(255, 255, 255) !important;
+			}
+
+			/* Modify brand and text color */
+
+			.nav-link {
+				color: green;
+			}
+		</style>
+		{% block css %} {% endblock %}
+	</head>
+	<style>
+		.navbar-custom {
+			background-color: rgb(255, 255, 255) !important;
+		}
+
+		/* Modify brand and text color */
+
+		.nav-link {
+			color: green !important;
+		}
+
+		.logo-style {
+			width: 260px !important;
+			height: 50px !important;
+		}
+	</style>
+	<body>
+		<!-- navbar -->
+
+		<nav class="navbar navbar-expand-lg navbar-custom">
+			<a class="navbar-brand" href="#">
+				<img
+					src="{% static 'home/logo.png' %}"
+					alt="home"
+					class="logo-style d-inline-block align-center ml-3"
+				/>
+				{% block theme-title %}{% endblock %}
+			</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Data <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Map</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% block theme_url%}{% endblock %}"
+							>{% block url_title %}{% endblock %}</a
+						>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		{% block body_outer %} {% endblock %}
+	</body>
+	{% block javascript%} {% endblock%}
+</html>

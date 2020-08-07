@@ -1,0 +1,80 @@
+{% block body_outer %} {% load static%}
+<style>
+	.navbar-custom {
+		background-color: rgb(255, 255, 255) !important;
+	}
+
+	/* Modify brand and text color */
+
+	.nav-link {
+		color: green;
+	}
+</style>
+<link rel="stylesheet" href="{% static 'home/dashboard_card.css' %}" />
+<link
+	rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous"
+/>
+
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+	<a class="navbar-brand" href="#">
+		<img src="{% static 'home/logo.png' %}" width="250" height="50" alt="" loading="lazy" />
+	</a>
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarNavDropdown"
+		aria-controls="navbarNavDropdown"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Data <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Map</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<div
+		class="card-container"
+		style="background: url('{%static ''%}'); background-size: cover; background-color: black;"
+	>
+		<div class="overlay">
+			<div class="items"></div>
+			<div class="items head">
+				<p>
+					<b>Theme 1<br /><br />
+				</p>
+				<br />
+				<hr />
+			</div>
+
+			<div class="items cart">
+				<a
+					href="facility_gis"
+					class="btn"
+					style="font-size: 150%; background-color: beige; color: darkslategray;"
+					>Explore</a
+				>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
